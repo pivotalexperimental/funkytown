@@ -11,7 +11,7 @@ require 'tempfile'
 
 require 'test/unit'
 
-require "seleniumrc_fu"
+require "funkytown"
 
 Test::Unit.run = true
 
