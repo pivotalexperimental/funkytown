@@ -51,7 +51,7 @@
  ARGV.each do |arg|
    puts "# USAGE USAGE USAGE"
    puts "#    cd public/selenium/[your test dir]"
-   puts "#    ls | xargs ruby ../../../vendor/plugins/seleniumrc_fu/tools/selenium_convert.rb"
+   puts "#    ls | xargs ruby ../../../vendor/plugins/funkytown/tools/selenium_convert.rb"
    puts "\n\n"
    puts "def " + SeleniumConvert.test_name(arg)
    File.open(arg) do |file|

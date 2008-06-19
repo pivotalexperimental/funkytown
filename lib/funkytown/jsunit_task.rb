@@ -114,7 +114,7 @@ module Funkytown
       # if the user specified browser_file_names in the config file, use it
       return @browser_file_names if @browser_file_names
 
-      script = "#{root}/vendor/plugins/seleniumrc_fu/script"
+      script = "#{root}/vendor/plugins/funkytown/script"
       jsunit_bin_dir = "#{@web_root}/#{@path_to_jsunit}/bin"
 
       if SYSTEM.mac
