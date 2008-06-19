@@ -117,10 +117,11 @@ module Funkytown
       script = "#{root}/vendor/plugins/funkytown/script"
       jsunit_bin_dir = "#{@web_root}/#{@path_to_jsunit}/bin"
 
+      # TODO: why a custom script dir?  Just use or patch the ones from jsunit
       if SYSTEM.mac
         "#{script}/start-firefox-mac.sh;#{jsunit_bin_dir}/mac/stop-firefox.sh"
       elsif SYSTEM.linux
-        "#{script}/unix/start-firefox.sh;#{jsunit_bin_dir}/unix/stop-firefox.sh"
+        "#{jsunit_bin_dir}/unix/start-firefox.sh;#{jsunit_bin_dir}/unix/stop-firefox.sh"
       elsif SYSTEM.windows
         [
         # "C:/Program Files/Mozilla Firefox/firefox.exe;#{jsunit_bin_dir}/winxp/stop-firefox.bat",
