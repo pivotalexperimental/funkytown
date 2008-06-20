@@ -67,16 +67,17 @@ module Funkytown
     end
 
     def servant_cmd(selenium_host)
-
-      cmd = "#{rake_command} selenium:run_server"
-
-      rake_env = env
-
-      cmd = "#{rake_command} selenium:run_server"
-      env_string = parameterize_env_variables(['selenium_server_jar'], rake_env)
-      cmd << " " << env_string unless env_string.empty?
-
-      cmd
+      "selenium"
+#
+#      cmd = "#{rake_command} selenium:run_server"
+#
+#      rake_env = env
+#
+#      cmd = "#{rake_command} selenium:run_server"
+#      env_string = parameterize_env_variables(['selenium_server_jar'], rake_env)
+#      cmd << " " << env_string unless env_string.empty?
+#
+#      cmd
     end
 
     def parameterize_env_variables(allowed_params, env)
