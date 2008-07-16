@@ -126,7 +126,7 @@ module Funkytown
         [
         # "C:/Program Files/Mozilla Firefox/firefox.exe;#{jsunit_bin_dir}/winxp/stop-firefox.bat",
         "C:/Program Files/Mozilla Firefox/firefox.exe",
-#        "C:/Program Files/Internet Explorer/iexplore.exe",
+        "C:/Program Files/Internet Explorer/iexplore.exe",
         ].join(",").gsub('/', "\\")
       else
         raise "Don't know what browsers to run in platform #{PLATFORM}"
