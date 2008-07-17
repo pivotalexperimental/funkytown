@@ -48,20 +48,20 @@ describe System do
 
   it "test_process__with_nothing" do
     begin
-      Funkytown::System::Process.new({})
+      Funkytown::System::Activity.new({})
     rescue => error
       error.message.should == "every process needs a name"
     end
   end
 
   it "test_process__name_and_command" do
-    process = Funkytown::System::Process.new(:name => "eating", :cmd => "/usr/bin/eat cheese")
+    process = Funkytown::System::Activity.new(:name => "eating", :cmd => "/usr/bin/eat cheese")
     process.name.should == "eating"
     process.cmd.should == "/usr/bin/eat cheese"
   end
 
   it "test_process__cmd" do
-    process = Funkytown::System::Process.new(:name => "fleas", :cmd => "   my   dog\n   has \nfleas   ")
+    process = Funkytown::System::Activity.new(:name => "fleas", :cmd => "   my   dog\n   has \nfleas   ")
     process.cmd.should == "my dog has fleas"
   end
 
@@ -77,7 +77,7 @@ describe System do
   end
 
   it "test_is_running" do
-    macho = Funkytown::System::Process.new(:name => "macho", :host => "localhost", :port => 9999)
+    macho = Funkytown::System::Activity.new(:name => "macho", :host => "localhost", :port => 9999)
 
     # silence log output
     class << macho

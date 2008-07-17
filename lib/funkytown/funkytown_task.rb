@@ -162,7 +162,7 @@ module Funkytown
 
     def process(options)
       say "creating process #{options.inspect}" if debug?
-      System::Process.new(options)
+      System::Activity.new(options)
     end
 
   end
