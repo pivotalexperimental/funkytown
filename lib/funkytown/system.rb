@@ -164,7 +164,7 @@ module Funkytown
           say "Starting [[#{name}]] in background, output to #{logfile}"
           pid = fork { run(true) }
           PidFile.new(name, @logdir).pid = pid
-          ::Activity.detach(pid)
+          ::Process.detach(pid)
         end
       end
 
@@ -178,11 +178,11 @@ module Funkytown
         if pidfile.exist?
           pid = pidfile.pid
           say "Stopping #{pid}"
-          ::Activity.kill("HUP", pid)
+          ::Process.kill("HUP", pid)
 
           pgid = pidfile.pgid
           say "Stopping group #{pgid}"
-          ::Activity.kill("TERM", -pgid)
+          ::Process.kill("TERM", -pgid)
 
           pidfile.delete
           #    Process.wait(pid)
@@ -263,7 +263,7 @@ module Funkytown
       def pid=(pid)
         File.open(filename, 'w') do |f|
           f.puts pid
-          f.puts ::Activity.getpgid(pid)
+          f.puts ::Process.getpgid(pid)
         end
       end
 
