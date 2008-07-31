@@ -5,6 +5,12 @@ module Funkytown
   class JsunitTask < FunkytownTask
 
     attr_accessor :jsunit_servants
+    
+    def initialize(*args)
+      super
+      raise "JAVA_HOME is not set" unless ENV['JAVA_HOME']
+      raise "JAVA_HOME is invalid : #{ENV['JAVA_HOME'].inspect}" unless File.exist?(File.join(ENV['JAVA_HOME'], 'bin/java'))
+    end
 
     def check_requirements
       return if @disable_requirement_checking
