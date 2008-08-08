@@ -67,7 +67,9 @@ module Funkytown
     end
 
     def servant_cmd(selenium_host)
-      "selenium"
+      cmd = "selenium #{@servant_options}"
+      say "Using servant command: #{cmd}"
+      cmd
 #
 #      cmd = "#{rake_command} selenium:run_server"
 #
