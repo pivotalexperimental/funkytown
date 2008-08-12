@@ -9,7 +9,7 @@ module Funkytown
     def initialize(*args)
       super
       raise "JAVA_HOME is not set" unless ENV['JAVA_HOME']
-      if !File.exist?(File.join(ENV['JAVA_HOME'], 'bin','java')) || File.exist?(File.join(ENV['JAVA_HOME'], 'bin','java.exe'))
+      if !File.exist?(File.join(ENV['JAVA_HOME'], 'bin','java')) || !File.exist?(File.join(ENV['JAVA_HOME'], 'bin','java.exe'))
         raise "JAVA_HOME is invalid : #{ENV['JAVA_HOME'].inspect}"
       end
     end
