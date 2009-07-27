@@ -67,7 +67,7 @@ module Funkytown
     end
 
     def servant_cmd(selenium_host)
-      cmd = "selenium #{@servant_options}"
+      cmd = "selenium-rc #{@servant_options}"
       say "Using servant command: #{cmd}"
       cmd
 #
