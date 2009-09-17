@@ -12,6 +12,12 @@ module Funkytown
         @has_tee = true
         @default_temp_dir = "/tmp"
 
+      when /java/i
+        @linux = @unix = true
+        @has_fork = false
+        @has_tee = true
+        @default_temp_dir = "/tmp"
+
       when /darwin/i
         @mac = @unix = true
         @has_fork = true
