@@ -106,7 +106,7 @@ module Funkytown
       "-DremoteMachineURLs=#{servant_urls}"
       "-DresourceBase=#{@web_root}"
       -Dport=#{@jsunit_master_port}
-      "-Durl=#{master_base}/#{@path_to_jsunit}/testRunner.html?testPage=#{master_base}/#{page.path}"
+      "-Durl=#{master_base}/#{@path_to_jsunit}/testRunner.html?pageloadtimeout=60&testPage=#{master_base}/#{page.path}"
       "-DlogsDirectory=#{@logdir}"
       distributed_test
       END

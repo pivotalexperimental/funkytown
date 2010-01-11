@@ -109,7 +109,7 @@ describe "The JsunitTask class" do
       %Q!"-DremoteMachineURLs=http://servant_1:8082,http://servant_2:8082"\n      ! +
       %Q!"-DresourceBase=/RAILS_ROOT/public"\n      ! +
       %Q!-Dport=8081\n      ! +
-      %Q!"-Durl=http://localhost:8081/jsunit/javascripts/jsunit/testRunner.html?testPage=http://localhost:8081/jsunit/javascripts/test-pages/test_me.html"\n      ! +
+      %Q!"-Durl=http://localhost:8081/jsunit/javascripts/jsunit/testRunner.html?pageloadtimeout=60&testPage=http://localhost:8081/jsunit/javascripts/test-pages/test_me.html"\n      ! +
       %Q!"-DlogsDirectory=/RAILS_ROOT/log"\n      ! +
       %Q!distributed_test\n!
 
@@ -145,7 +145,7 @@ describe "The JsunitTask class" do
     process = jsunit.master_process(new_page("im_test_page"))
 
     process.name.should == "jsunit_im_test_page-#{jsunit.uid}"
-    process.cmd.include?("?testPage=http://localhost:8081/" +
+    process.cmd.include?("testPage=http://localhost:8081/" +
       "jsunit/javascripts/test-pages/im_test_page").should be_true
     process.host.should == "localhost"
     process.port.should be_nil
