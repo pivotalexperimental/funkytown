@@ -36,6 +36,7 @@ module Funkytown
       :jsunit_master_host => "localhost",
       :jsunit_master_port => 8082,
       :path_to_jsunit => "javascripts/jsunit/jsunit",
+      :jsunit_jar_path => "#{root}/public/javascripts/jsunit/jsunit_jar/jsunit.jar",
       :path_to_test_pages => "javascripts/test-pages",
       :timeout_seconds => 1200,
       :web_root => "#{root}/public",

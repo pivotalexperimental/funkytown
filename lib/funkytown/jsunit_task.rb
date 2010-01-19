@@ -69,6 +69,7 @@ module Funkytown
     def servant_cmd(servant_host)
       cmd=<<-END
     #{@ant} -f public/#{@path_to_jsunit}/build.xml
+      "-DcustomJsUnitJarPath=#{@jsunit_jar_path}"
       "-DbrowserFileNames=#{browser_file_names}"
       -Dport=#{servant_port(servant_host)}
       -DtimeoutSeconds=#{@timeout_seconds}
@@ -100,9 +101,9 @@ module Funkytown
 
     def test_cmd(page)
       say "Running test #{page.clean}"
-
       cmd=<<-END
     #{@ant} -f #{@web_root}/#{@path_to_jsunit}/build.xml
+      "-DcustomJsUnitJarPath=#{@jsunit_jar_path}"
       "-DremoteMachineURLs=#{servant_urls}"
       "-DresourceBase=#{@web_root}"
       -Dport=#{@jsunit_master_port}
